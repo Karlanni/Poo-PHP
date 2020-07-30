@@ -3,34 +3,50 @@
 class Caneta {
 
     public $modelo;
-    public $cor;
+    private $cor;   
     private $ponta;
-    protected $carga;
-    protected $tampada;
+    private $tampada;
 
-    public function rabiscar () {
+   /* public function __construct() {
 
-        if ($this->tampada == true) {
+        $this->cor = "azul";
+        $this->tampar();
+    }*/
 
-            echo "<p>Erro! Não posso rabiscar...</p>";
+    public function Caneta($m, $c, $p) { //Método construtor. Ele pode ter o mesmo nome da calsse
 
-        } else {
-
-            echo "<p>Estou rabiscando...</p>";
-        }
-
+        //$this->setModelo(); ou
+        $this->modelo = $m;
+        $this->cor = $c;
+        $this->ponta = $p;
+        $this->tampar();
+        
     }
 
     public function tampar() {
 
         $this->tampada = true;
-
+    }
+   
+    public function getModelo() {
+        
+        return $this->modelo;
     }
 
-    public function destampar() {
+    public function setModelo($m) {
 
-        $this->tampada = false;
+        $this->modelo = $m;
+    }
 
+    public function getPonta() {
+
+        return $this->ponta;
+    }
+
+    public function setPonta($p) {
+
+        $this->ponta =  $p;
+        
     }
 }
 
